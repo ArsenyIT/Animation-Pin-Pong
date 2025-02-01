@@ -3,7 +3,7 @@ from tkinter import *
 import time
 import random
 
-# 3. Класс Ball, должен двигатся, должен появится, Видел границы
+# 3. Класс Ball, должен двигатся, должен появится, видел границы
 class Ball():
     def __init__(self, canvas, color, platform1, platform2):
         self.platform1 = platform1
@@ -108,13 +108,13 @@ class Platform2(Platform):
         self.canvas = canvas
         self.rect2 = canvas.create_rectangle(0, 150, 10, 250, fill=color)
         self.y = 0
-        self.canvas.bind_all('<KeyPress-w>', self.w)
-        self.canvas.bind_all('<KeyPress-s>', self.s)
+        self.canvas.bind_all('<KeyPress-w>', self.up)
+        self.canvas.bind_all('<KeyPress-s>', self.down)
 
-    def w(self, event):
+    def up(self, event):
         self.y = -9
 
-    def s(self, event):
+    def down(self, event):
         self.y = 9
 
     def draw(self):
